@@ -1,17 +1,47 @@
 <?php
-require_once "../modelo/DAO/CitaDAO.php";
+include "../modelo/DAO/CitaDAO.php";
+include "../modelo/DTO/Cita.php";
 class ControladorCitas{
-    public function ControladoreCitas(){
+    public function ControladoreCitas($cita){
 
+    }
+
+    public function agendarCita($cita){
+        $c = new CitaDAO();
+        $c->agendarCita($cita);
     }
     public function listarAdministradores(){
-        $c = new CitaDAO;
+        $c = new CitaDAO();
         return $c->listarAdministradores();
     }
-}
-$CC = new ControladorCitas;
+    public function listarCitas(){
+        $c = new CitaDAO;
+        return $c->listarCitas();
+    }
 
-$CC->listarAdministradores();
+    public function listarCitasCVE($cita){
+        $c = new CitaDAO();
+        return $c->listarCitasCVE($cita);
+    }
+
+    public function eliminarCita($cita){
+        $c = new CitaDAO();
+        return $c->eliminarCita($cita);
+    }
+
+    public function actualizarDatosCita($cita){
+        $c = new CitaDAO();
+        return $c->actualizarDatosCita($cita);
+    }
+
+    public function buscarHorario($cita){
+        $c = new CitaDAO();
+        return $c->buscarHorario($cita);
+    }
+}
+//$CC = new ControladorCitas;
+
+//$CC->listarAdministradores();
 
 ?>
 
